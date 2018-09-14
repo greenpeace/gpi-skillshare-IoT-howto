@@ -6,16 +6,19 @@
 /out-tsc
 /cloud-function-iotWeather/dist
 /firebase-hosting-tempcharts/dist
+/reportData/dist
 /cloud-function-iotWeather/tmp
 /firebase-hosting-tempcharts/tmp
+/reportData/tmp
 /cloud-function-iotWeather/out_tsc
 /firebase-hosting-tempcharts/out_tsc
-
+/reportData/out_tsc
 
 # dependencies
 /node_modules
 /cloud-function-iotWeather/node_modules
 /firebase-hosting-tempcharts/node_modules
+/reportData/node_modules
 
 # IDEs and editors
 /.idea
