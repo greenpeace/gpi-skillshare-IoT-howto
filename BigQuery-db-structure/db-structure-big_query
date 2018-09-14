@@ -1,0 +1,6 @@
+deviceid	STRING	REQUIRED	
+timestamp	TIMESTAMP	REQUIRED	
+temp	FLOAT	REQUIRED	
+humidity	FLOAT	REQUIRED	
+free_ram	FLOAT	NULLABLE	
+total_ram	FLOAT	NULLABLE	
