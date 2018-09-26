@@ -8,7 +8,7 @@ export class WeatherService {
   constructor(private _http: HttpClient) { }
 
   reportData() {
-    return this._http.get<any[]>("https://us-central1-torbjorn-zetterlund.cloudfunctions.net/getReportData")
+    return this._http.get<any[]>("<Your Weather Data")
       .pipe(map((result: any) => result));
   }
 }
