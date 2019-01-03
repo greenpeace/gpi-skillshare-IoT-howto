@@ -19,6 +19,7 @@
 /cloud-function-iotWeather/functions/node_modules
 /firebase-hosting-tempcharts/node_modules
 /reportData/functions/node_modules
+/reportData/functions/package-lock.json
 
 # Remove keys
 *.pem
