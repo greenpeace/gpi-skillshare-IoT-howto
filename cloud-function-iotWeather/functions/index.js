@@ -2,8 +2,7 @@
 // Set the variables
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
-const bigquery = require('@google-cloud/bigquery')();
-const cors = require('cors')({ origin: true });
+const bigquery = require('@google-cloud/bigquery');
 
 admin.initializeApp(functions.config().firebase);
 
