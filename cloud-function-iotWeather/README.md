@@ -25,4 +25,4 @@ The function triggers on upload of any file to Firebase project.
 
 ## Deploy and test
 
-1. Deploy your Cloud Functions using 'firebase deploy --only functions:iotWeather'
+1. Deploy your Cloud Functions using `firebase deploy --only functions:iotWeather`
