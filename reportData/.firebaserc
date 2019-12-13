@@ -1,6 +1,7 @@
 {
   "projects": {
     "production": "torbjorn-zetterlund",
-    "default": "skillshare-11"
+    "default": "torbjorn-zetterlund",
+    "staging": "torbjorn-zetterlund"
   }
 }

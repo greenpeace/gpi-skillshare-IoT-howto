@@ -1,11 +1,13 @@
-
-// Set the variables
-const functions = require('firebase-functions');
+// Var Firebase Functions
+var functions = require('firebase-functions');
 const admin = require('firebase-admin');
-const bigquery = require('@google-cloud/bigquery');
+
+// Imports the Google Cloud client library
+const {BigQuery} = require('@google-cloud/bigquery');
 
 admin.initializeApp(functions.config().firebase);
 
+// Intialise Firebase
 const db = admin.database();
 
 /**
@@ -67,7 +69,29 @@ function updateCurrentDataFirebase(data) {
  * Store all the raw data in bigquery
  */
 function insertIntoBigquery(data) {
-  const dataset = bigquery.dataset(functions.config().bigquery.datasetname);
-  const table = dataset.table(functions.config().bigquery.tablename);
-  return table.insert(data);
+
+  // Create a client
+  const bigqueryClient = new BigQuery();
+
+  //Make use of a dataset
+  const datasetId = 'weather_data';
+
+  //Make use of a table
+  const tableId = 'raw_data';
+
+  // Insert into BigQuery
+  return bigqueryClient
+    .dataset(datasetId)
+    .table(tableId)
+    .insert(data)
+    .catch(err => {
+      if (err && err.name === 'PartialFailureError') {
+          if (err.errors && err.errors.length > 0) {
+              console.log('Insert errors:');
+              err.errors.forEach(err => console.error(err));
+          }
+      } else {
+          console.error('ERROR:', err);
+      }
+    });
 }
